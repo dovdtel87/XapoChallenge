@@ -1,5 +1,7 @@
 package com.dmgdavid2109.xapochallenge.kotlinrepos.helpers
 
+import androidx.arch.core.executor.ArchTaskExecutor
+import androidx.arch.core.executor.TaskExecutor
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -40,4 +42,24 @@ inline fun <reified T: Any> LifecycleAware.mock(
     return memoized(mode) {
         mockk<T>(relaxed = true, block = block)
     }
+}
+
+fun LifecycleAware.withInstantTaskExecutor() {
+    beforeEachTest {
+        ArchTaskExecutor.getInstance().setDelegate(object : TaskExecutor() {
+            override fun executeOnDiskIO(runnable: Runnable) {
+                runnable.run()
+            }
+
+            override fun isMainThread(): Boolean {
+                return true
+            }
+
+            override fun postToMainThread(runnable: Runnable) {
+                runnable.run()
+            }
+        })
+    }
+
+    afterEachTest { ArchTaskExecutor.getInstance().setDelegate(null) }
 }
