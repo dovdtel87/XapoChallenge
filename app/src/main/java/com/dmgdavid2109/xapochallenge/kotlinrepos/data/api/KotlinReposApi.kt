@@ -6,8 +6,13 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface KotlinReposApi {
+
+    companion object {
+        const val DEFAULT_LANGUAGE = "kotlin"
+    }
+
     @GET("repositories")
     suspend fun retrieveRepositories(
-        @Query("language") language: String
+        @Query("language") language: String = DEFAULT_LANGUAGE
     ): Response<List<KotlinRepoDTO>>
 }
