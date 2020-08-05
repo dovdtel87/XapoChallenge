@@ -9,7 +9,7 @@ import com.dmgdavid2109.xapochallenge.kotlinrepos.domain.model.KotlinRepo
 import com.dmgdavid2109.xapochallenge.kotlinrepos.domain.repository.KotlinRepoRepository
 import javax.inject.Inject
 
-class RepositoriesRepositoryImpl @Inject constructor(
+class KotlinRepoRepositoryImpl @Inject constructor(
     private val kotlinReposApi: KotlinReposApi,
     private val repositoryMapper: ListMapper<KotlinRepoDTO, KotlinRepo>
 ) : KotlinRepoRepository {
