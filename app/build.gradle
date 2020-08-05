@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -26,6 +27,8 @@ android {
 
 dependencies {
     def retrofit = "2.9.0"
+    def dagger = "2.28"
+    def daggerHilt = "2.28-alpha"
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -35,6 +38,11 @@ dependencies {
 
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
+
+    implementation "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+    implementation "com.google.dagger:hilt-android:$daggerHilt"
+    kapt "com.google.dagger:hilt-android-compiler:$daggerHilt"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
