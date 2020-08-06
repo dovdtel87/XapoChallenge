@@ -7,6 +7,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.dmgdavid2109.xapochallenge.common.ui.viewBinding
 import com.dmgdavid2109.xapochallenge.R
+import com.dmgdavid2109.xapochallenge.common.ui.setViewModelInputs
+import com.dmgdavid2109.xapochallenge.common.ui.setViewState
 import com.dmgdavid2109.xapochallenge.databinding.KotlinRepoListFragmentBinding
 import com.dmgdavid2109.xapochallenge.di.ViewModelFactory
 import javax.inject.Inject
@@ -30,9 +32,11 @@ class KotlinRepoListFragment @Inject constructor(
         val listAdapter = KotlinRepoListAdapter()
 
         binding.list.adapter = listAdapter
+        binding.loadingView.setViewModelInputs(repositoriesListViewModel)
 
         repositoriesListViewModel.viewState.observe(viewLifecycleOwner, Observer { viewState ->
             listAdapter.submitList(viewState.repositoryList)
+            binding.loadingView.setViewState(viewState)
         })
     }
 }
