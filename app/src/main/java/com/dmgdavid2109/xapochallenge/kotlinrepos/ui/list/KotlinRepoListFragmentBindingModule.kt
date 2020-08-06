@@ -2,6 +2,7 @@ package com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list
 
 import androidx.fragment.app.Fragment
 import com.dmgdavid2109.xapochallenge.di.FragmentKey
+import com.dmgdavid2109.xapochallenge.kotlinrepos.ui.details.KotlinRepoDetailFragment
 import com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list.KotlinRepoListFragment
 import dagger.Binds
 import dagger.Module
@@ -17,5 +18,10 @@ abstract class KotlinRepoListFragmentBindingModule {
     @IntoMap
     @FragmentKey(KotlinRepoListFragment::class)
     abstract fun bindListFragment(mainFragment: KotlinRepoListFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(KotlinRepoDetailFragment::class)
+    abstract fun bindDetailsFragment(mainFragment: KotlinRepoDetailFragment): Fragment
 
 }
