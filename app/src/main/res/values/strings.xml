@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">XapoChallenge</string>
+    <string name="generic_error">There was an error!</string>
+    <string name="repository_avatar">Avatar of repository</string>
 </resources>
