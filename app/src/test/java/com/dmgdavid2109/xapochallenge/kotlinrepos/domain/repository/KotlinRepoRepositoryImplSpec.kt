@@ -1,4 +1,4 @@
-package com.dmgdavid2109.xapochallenge.kotlinrepos.domain
+package com.dmgdavid2109.xapochallenge.kotlinrepos.domain.repository
 
 import com.dmgdavid2109.xapochallenge.common.data.ListMapper
 import com.dmgdavid2109.xapochallenge.common.data.Result
@@ -36,14 +36,20 @@ object RepositoriesRepositoryImplSpec : Spek({
         KotlinRepoDTO(
             "First repository",
             "Contains the description of first repository",
-            "https://avatar1.png"
+            "https://avatar1.png",
+            "dovdtel87",
+            "123",
+            "45"
         )
     )
 
     val repository1 = KotlinRepo(
         "First repository",
         "Contains the description of first repository",
-        "https://avatar1.png"
+        "https://avatar1.png",
+        "dovdtel87",
+        "123",
+        "45"
     )
 
     describe("getRepositories") {

@@ -10,9 +10,12 @@ import org.spekframework.spek2.style.specification.describe
 object KotlinRepoMapperSpec : Spek({
     val mapper = KotlinRepoMapper()
     val kotlinRepoDTO = KotlinRepoDTO(
-        "First repository",
-        "Contains the description of first repository",
-        "https://avatar1.png"
+    "First repository",
+    "Contains the description of first repository",
+    "https://avatar1.png",
+    "dovdtel87",
+    "123",
+    "45"
     )
 
     describe("map") {
@@ -21,7 +24,10 @@ object KotlinRepoMapperSpec : Spek({
             val expected = KotlinRepo(
                 "First repository",
                 "Contains the description of first repository",
-                "https://avatar1.png"
+                "https://avatar1.png",
+                "dovdtel87",
+                "123",
+                "45"
             )
             assertEquals(expected, result)
         }
