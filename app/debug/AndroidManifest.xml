@@ -7,6 +7,5 @@
         android:networkSecurityConfig="@xml/network_security_config_debug"
         tools:replace="android:networkSecurityConfig"
         tools:ignore="GoogleAppIndexingWarning">
-
     </application>
 </manifest>
