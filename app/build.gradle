@@ -20,6 +20,18 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildTypes {
+        debug {
+            buildConfigField "String", "API_URL", "${project.API_URL_TEST}"
+        }
+
+        release {
+            buildConfigField "String", "API_URL", "${project.API_URL_PRODUCTION}"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -31,20 +43,6 @@ android {
 
     viewBinding {
         enabled = true
-    }
-
-    buildTypes {
-        debug {
-            buildConfigField "String", "API_URL", "${project.API_URL_TEST}"
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-
-        release {
-            buildConfigField "String", "API_URL", "${project.API_URL_PRODUCTION}"
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
     }
 
     testOptions {
@@ -97,18 +95,26 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$daggerHilt"
     implementation "com.squareup.okhttp3:okhttp:$okhttp"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp"
-
     implementation "com.github.bumptech.glide:glide:$glide"
-    kapt "com.github.bumptech.glide:compiler:$glide"
 
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    testImplementation 'junit:junit:4.12'
     testImplementation "org.spekframework.spek2:spek-dsl-jvm:$spek"
     testImplementation "org.spekframework.spek2:spek-runner-junit5:$spek"
     testImplementation "io.mockk:mockk:$mockk"
     testImplementation "io.mockk:mockk-android:$mockk"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    testImplementation "com.google.dagger:hilt-android-testing:$daggerHilt"
 
-    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    kaptTest "com.google.dagger:hilt-android-compiler:$daggerHilt"
+
+    androidTestImplementation "androidx.arch.core:core-testing:$archCoreTesting"
+    debugImplementation "androidx.fragment:fragment-testing:$fragment"
+    androidTestImplementation "io.mockk:mockk-android:$mockk"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$daggerHilt"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$daggerHilt"
+
+
 }

@@ -29,7 +29,10 @@ object GetKotlinReposUseCaseSpec : Spek({
     val repository1 = KotlinRepo(
         "First repository",
         "Contains the description of first repository",
-        "https://avatar1.png"
+        "https://avatar1.png",
+        "dovdtel87",
+        "123",
+        "45"
     )
 
     describe("invoke") {

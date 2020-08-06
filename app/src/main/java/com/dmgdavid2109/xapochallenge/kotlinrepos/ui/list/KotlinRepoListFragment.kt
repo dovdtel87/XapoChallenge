@@ -19,7 +19,6 @@ import javax.inject.Inject
 class KotlinRepoListFragment @Inject constructor(
     private val viewModelFactory: ViewModelFactory<KotlinRepoListViewModel>
 ) : Fragment((R.layout.kotlin_repo_list_fragment)) {
-
     private val binding by viewBinding(KotlinRepoListFragmentBinding::bind)
 
     private val repositoriesListViewModel: KotlinRepoListViewModel by viewModels {
