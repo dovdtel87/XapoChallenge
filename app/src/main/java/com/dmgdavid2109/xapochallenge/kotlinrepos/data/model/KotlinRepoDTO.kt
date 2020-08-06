@@ -7,5 +7,8 @@ import com.squareup.moshi.JsonClass
 data class KotlinRepoDTO(
     @Json(name = "name") val name: String,
     @Json(name = "description") val description: String,
-    @Json(name = "avatar") val avatarUrl: String
+    @Json(name = "avatar") val avatarUrl: String,
+    @Json(name = "author") val author: String,
+    @Json(name = "stars") val stars: String,
+    @Json(name = "forks") val forks: String
 )
