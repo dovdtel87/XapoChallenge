@@ -12,7 +12,10 @@ class KotlinRepoMapper @Inject constructor() : Mapper<KotlinRepoDTO, KotlinRepo>
             return KotlinRepo(
                 input.name,
                 input.description,
-                input.avatarUrl
+                input.avatarUrl,
+                input.author,
+                input.stars,
+                input.forks
             )
         }
     }

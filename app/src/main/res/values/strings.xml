@@ -3,4 +3,7 @@
     <string name="generic_error">There was an error!</string>
     <string name="repository_avatar">Avatar of repository</string>
     <string name="try_again">Try again</string>
+    <string name="author">Author</string>
+    <string name="starts">Starts</string>
+    <string name="forks">Forks</string>
 </resources>

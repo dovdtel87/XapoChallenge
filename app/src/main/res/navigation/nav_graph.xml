@@ -8,9 +8,29 @@
 
     <fragment
         android:id="@+id/repositoriesListFragment"
-        android:name="com.dmgdavid2109.xapochallenge.kotlinrepos.ui.KotlinRepoListFragment"
-        android:label="JobsListFragment"
+        android:name="com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list.KotlinRepoListFragment"
+        android:label="repositoriesListFragment"
         tools:layout="@layout/kotlin_repo_list_fragment">
+
+        <action
+            android:id="@+id/action_repositoriesListFragment_to_repositoriesDetailFragment"
+            app:destination="@id/repositoriesDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/repositoriesDetailFragment"
+        android:name="com.dmgdavid2109.xapochallenge.kotlinrepos.ui.details.KotlinRepoDetailFragment"
+        android:label="repositoriesDetailFragment"
+        tools:layout="@layout/kotlin_repo_detail_fragment">
+
+        <argument
+            android:name="repo"
+            app:argType="com.dmgdavid2109.xapochallenge.kotlinrepos.domain.model.KotlinRepo" />
+
     </fragment>
 
 </navigation>

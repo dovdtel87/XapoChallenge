@@ -1,4 +1,4 @@
-package com.dmgdavid2109.xapochallenge.kotlinrepos.ui
+package com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -11,7 +11,9 @@ import com.dmgdavid2109.xapochallenge.R
 import com.dmgdavid2109.xapochallenge.databinding.RepositoryListItemBinding
 import com.dmgdavid2109.xapochallenge.kotlinrepos.domain.model.KotlinRepo
 
-class KotlinRepoListAdapter() : ListAdapter<KotlinRepo, KotlinRepoItemViewHolder>(object :
+class KotlinRepoListAdapter(
+    private val onItemTapped: (repoItem: KotlinRepo) -> Unit
+) : ListAdapter<KotlinRepo, KotlinRepoItemViewHolder>(object :
     DiffUtil.ItemCallback<KotlinRepo>() {
     override fun areItemsTheSame(oldItem: KotlinRepo, newItem: KotlinRepo) = oldItem.name == newItem.name
     override fun areContentsTheSame(oldItem: KotlinRepo, newItem: KotlinRepo) = oldItem.name == newItem.name
@@ -20,7 +22,11 @@ class KotlinRepoListAdapter() : ListAdapter<KotlinRepo, KotlinRepoItemViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KotlinRepoItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = RepositoryListItemBinding.inflate(inflater, parent, false)
-        return KotlinRepoItemViewHolder(parent.context, binding)
+        return KotlinRepoItemViewHolder(
+            parent.context,
+            binding,
+            onItemTapped
+        )
     }
 
     override fun onBindViewHolder(holder: KotlinRepoItemViewHolder, position: Int) {
@@ -30,7 +36,8 @@ class KotlinRepoListAdapter() : ListAdapter<KotlinRepo, KotlinRepoItemViewHolder
 
 class KotlinRepoItemViewHolder(
     private val context: Context,
-    private val binding: RepositoryListItemBinding
+    private val binding: RepositoryListItemBinding,
+    private val onItemTapped: (repoItem: KotlinRepo) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: KotlinRepo) {
@@ -41,5 +48,9 @@ class KotlinRepoItemViewHolder(
             .load(item.avatar)
             .placeholder(R.drawable.ic_launcher_foreground)
             .into(binding.repositoryLogo)
+
+        binding.cardView.setOnClickListener {
+            onItemTapped(item)
+        }
     }
 }

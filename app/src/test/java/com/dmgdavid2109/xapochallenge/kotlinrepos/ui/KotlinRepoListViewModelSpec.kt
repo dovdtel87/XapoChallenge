@@ -8,6 +8,8 @@ import com.dmgdavid2109.xapochallenge.kotlinrepos.helpers.getValueTest
 import com.dmgdavid2109.xapochallenge.kotlinrepos.helpers.mock
 import com.dmgdavid2109.xapochallenge.kotlinrepos.helpers.withInstantTaskExecutor
 import com.dmgdavid2109.xapochallenge.kotlinrepos.helpers.withTestCoroutine
+import com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list.KotlinRepoListViewModel
+import com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list.KotlinRepoListViewState
 import io.mockk.coEvery
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -35,7 +37,12 @@ class KotlinRepoListViewModelSpec : Spek({
 
     describe("init") {
         context("when list successfully retrieved") {
-            val expectedViewState = KotlinRepoListViewState(false, null, listOf(repository1))
+            val expectedViewState =
+                KotlinRepoListViewState(
+                    false,
+                    null,
+                    listOf(repository1)
+                )
             beforeEachTest {
                 coEvery { getRepositoriesUseCase.invoke() } returns Result.Success(listOf(repository1))
             }
@@ -45,7 +52,12 @@ class KotlinRepoListViewModelSpec : Spek({
         }
 
         context("when there is an error") {
-            val expectedViewStateError = KotlinRepoListViewState(false, R.string.generic_error, emptyList())
+            val expectedViewStateError =
+                KotlinRepoListViewState(
+                    false,
+                    R.string.generic_error,
+                    emptyList()
+                )
             beforeEachTest {
                 coEvery { getRepositoriesUseCase.invoke() } returns Result.Error(Exception())
             }
