@@ -1,4 +1,4 @@
-package com.dmgdavid2109.xapochallenge.kotlinrepos.ui
+package com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -12,7 +12,8 @@ import javax.inject.Inject
 
 class KotlinRepoListViewModel @Inject constructor(
     private val getRepositoriesUseCase: GetRepositoriesUseCase
-) : ViewModel(), KotlinRepoListViewModelInput {
+) : ViewModel(),
+    KotlinRepoListViewModelInput {
 
     private val _viewState = ViewStateLiveData(KotlinRepoListViewState())
     val viewState: LiveData<KotlinRepoListViewState>

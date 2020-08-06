@@ -1,4 +1,4 @@
-package com.dmgdavid2109.xapochallenge.kotlinrepos.ui
+package com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -20,7 +20,10 @@ class KotlinRepoListAdapter() : ListAdapter<KotlinRepo, KotlinRepoItemViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KotlinRepoItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = RepositoryListItemBinding.inflate(inflater, parent, false)
-        return KotlinRepoItemViewHolder(parent.context, binding)
+        return KotlinRepoItemViewHolder(
+            parent.context,
+            binding
+        )
     }
 
     override fun onBindViewHolder(holder: KotlinRepoItemViewHolder, position: Int) {

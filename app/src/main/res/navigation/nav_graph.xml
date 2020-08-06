@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/repositoriesListFragment"
-        android:name="com.dmgdavid2109.xapochallenge.kotlinrepos.ui.KotlinRepoListFragment"
+        android:name="com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list.KotlinRepoListFragment"
         android:label="JobsListFragment"
         tools:layout="@layout/kotlin_repo_list_fragment">
     </fragment>

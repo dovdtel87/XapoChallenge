@@ -1,7 +1,8 @@
-package com.dmgdavid2109.xapochallenge.kotlinrepos.ui
+package com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list
 
 import androidx.fragment.app.Fragment
 import com.dmgdavid2109.xapochallenge.di.FragmentKey
+import com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list.KotlinRepoListFragment
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.dmgdavid2109.xapochallenge.kotlinrepos.ui
+package com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list
 
 import android.os.Bundle
 import android.view.View
@@ -29,7 +29,8 @@ class KotlinRepoListFragment @Inject constructor(
     }
 
     private fun bindView() {
-        val listAdapter = KotlinRepoListAdapter()
+        val listAdapter =
+            KotlinRepoListAdapter()
 
         binding.list.adapter = listAdapter
         binding.loadingView.setViewModelInputs(repositoriesListViewModel)
