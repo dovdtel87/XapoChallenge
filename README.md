@@ -10,7 +10,7 @@
   
 The project follows a feature structure, there is a feature folder where all additional features would be placed, in this example, the feature provided is `Kotlinrepos`  
   
-Each feature manages the three layers of clear architecture (Data - Domain - UI).  
+Each feature manages the three layers of clean architecture (Data - Domain - UI).  
   
 As DI framework I used Dagger Hilt, its configuration is done in the subfolder DI  
   
