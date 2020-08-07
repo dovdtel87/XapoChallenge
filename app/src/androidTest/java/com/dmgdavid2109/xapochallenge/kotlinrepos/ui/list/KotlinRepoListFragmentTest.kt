@@ -2,9 +2,6 @@ package com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list
 
 import com.dmgdavid2109.xapochallenge.R
 import com.dmgdavid2109.xapochallenge.kotlinrepos.domain.model.KotlinRepo
-import com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list.KotlinRepoListFragment
-import com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list.KotlinRepoListViewModel
-import com.dmgdavid2109.xapochallenge.kotlinrepos.ui.list.KotlinRepoListViewState
 import com.dmgdavid2109.xapochallenge.utils.createFactoryWithNavController
 import com.dmgdavid2109.xapochallenge.utils.toFactory
 import com.dmgdavid2109.xapochallenge.utils.toLiveData

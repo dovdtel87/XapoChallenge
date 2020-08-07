@@ -34,7 +34,7 @@ The gradle file has 2 build types, one for debug and other for production, both 
 For retrieving the list of trending kotlin respositories I used the following endpoint:   [https://ghapi.huchen.dev/repositories?language=kotlin](https://ghapi.huchen.dev/repositories?language=kotlin)
 Its documentation can be find here: [https://githubtrendingapi.docs.apiary.io/#reference/0/repositories/list-trending-repositories](https://githubtrendingapi.docs.apiary.io/#reference/0/repositories/list-trending-repositories)
 
-Also note this API doesn't provide a detail endpoint, so I had to pass the details of the repository from the list screen to the detail screen. Ideally, I would only have to pass an ID and then implement a network call to retrieve the detail that can be cached. 
+Also note this API doesn't provide a detail endpoint, so I had to pass the details of the repository from the list screen to the detail screen. Ideally, I would only have to pass an ID and then implement a network call to retrieve the detail that then can be cached. 
   
 # Scrum:  
 In order to manage this project I followed the principles of _Scrum Methodology_ identifying the following tasks and estimating them as follows:  
@@ -55,4 +55,3 @@ Other tasks identified not implemented:
 - [ ] **TaskL**: Implement persistence for not network 
 - [ ] **TaskM**: Implement pull to refresh  on the list
 - [ ] **TaskN**: Migrate gradle to KTS  
-- [ ] **TaskO**: Implement custom toolbar for details screen to handle back navigation
