@@ -44,7 +44,8 @@ In order to manage this project I followed the principles of _Scrum Methodology_
 - [x]  **TaskC**: Implement Dagger-> Story Points: **5**  
 - [x] **TaskD**: Implement retrieving the data from backend-> Story Points: **3**  
 - [x] **TaskE**: UI implementation of the list -> Story Points: **3**  
-- [x] **TaskF**: UITest of the view -> Story Points: **3**  
+- [x] **TaskF**: Implementation of detail screen -> Story Points: **2**  
+- [x] **TaskG**: UITest of the view -> Story Points: **3**  
   
 Other tasks identified not implemented:  
   
