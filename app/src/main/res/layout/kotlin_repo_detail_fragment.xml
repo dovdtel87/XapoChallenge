@@ -7,6 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".kotlinrepos.ui.MainActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/BaseToolbarTheme"
+            app:titleTextColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLineStart"
         android:layout_width="wrap_content"
@@ -39,7 +56,7 @@
         android:id="@+id/repo_logo"
         android:layout_width="240dp"
         android:layout_height="240dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="?attr/actionBarSize"
         android:contentDescription="@string/repository_avatar"
         app:layout_constraintEnd_toStartOf="@+id/guideLineEnd"
         app:layout_constraintStart_toStartOf="@id/guideLineStart"
